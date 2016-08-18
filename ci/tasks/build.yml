@@ -18,5 +18,5 @@ run:
   - -exc
   - |
     ls source-code
-    cp source-code/* source-code-built/
+    cp -r source-code/* source-code-built/
     ls source-code-built
