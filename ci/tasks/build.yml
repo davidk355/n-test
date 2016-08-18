@@ -17,4 +17,6 @@ run:
   args:
   - -exc
   - |
-    ls
+    ls source-code
+    echo "--------"
+    ls source-code-built
