@@ -4,20 +4,20 @@ image_resource:
   type: docker-image
   source:
     repository: node
-#    tag: latest
+    tag: latest
 
-#inputs:
-#  - name: source-code
+inputs:
+  - name: source-code
 
-#outputs:
-#  - name: source-code-built
+outputs:
+  - name: source-code-built
 
-#run:
-#  path: sh
-#  args:
-#  - -exc
-#  - |
-#    cd source-code
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    cd source-code
 #    ./gradlew assemble
 #    echo ls ./build/libs
 #    cp ./build/libs/spring-music.jar ../source-code-built/spring-music.jar
