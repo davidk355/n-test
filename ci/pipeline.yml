@@ -26,4 +26,4 @@ jobs:
       path: source-code
     - put: resource-deploy-web-app
       params:
-        manifest: source-code/manifest.yml
+        manifest: source-code-built/manifest.yml
