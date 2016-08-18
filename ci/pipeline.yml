@@ -27,5 +27,5 @@ jobs:
 #    - put: resource-deploy-web-app
 #      params:
 #        manifest: source-code-built/manifest.yml
-    - task: {{Name of task}}
-      file: source-code/manifest.yml
+    - task: build
+      file: source-code/build.yml
