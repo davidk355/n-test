@@ -28,4 +28,4 @@ jobs:
 #      params:
 #        manifest: source-code-built/manifest.yml
     - task: build
-      file: source-code/build.yml
+      file: source-code/ci/tasks/build.yml
