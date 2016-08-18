@@ -18,5 +18,5 @@ run:
   - -exc
   - |
     ls source-code
-    echo "--------"
+    cp source-code/manifest.yml source-code-built/manifest.yml
     ls source-code-built
