@@ -6,17 +6,23 @@ image_resource:
     repository: node
     tag: latest
 
-inputs:
-  - name: source-code
+#inputs:
+#  - name: source-code
 
-outputs:
-  - name: source-code-built
+#outputs:
+#  - name: source-code-built
 
+#run:
+#  path: sh
+#  args:
+#  - -exc
+#  - |
+#    ls source-code
+#    cp -r source-code/* source-code-built/
+#    ls source-code-built
 run:
   path: sh
   args:
   - -exc
   - |
-    ls source-code
-    cp -r source-code/* source-code-built/
-    ls source-code-built
+    npm start 

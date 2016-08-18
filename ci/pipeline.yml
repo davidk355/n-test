@@ -20,10 +20,12 @@ jobs:
     serial: true
     plan:
     - {get: source-code, trigger: true}
-    - task: build
-      privileged: true
-      file: source-code/ci/tasks/build.yml
-      path: source-code
-    - put: resource-deploy-web-app
-      params:
-        manifest: source-code-built/manifest.yml
+#    - task: build
+#      privileged: true
+#      file: source-code/ci/tasks/build.yml
+#      path: source-code
+#    - put: resource-deploy-web-app
+#      params:
+#        manifest: source-code-built/manifest.yml
+    - task: {{Name of task}}
+      file: source-code/manifest.yml
