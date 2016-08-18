@@ -20,5 +20,3 @@ run:
     ls source-code
     cp -r source-code/* source-code-built/
     ls source-code-built
-    /usr/local/bin/npm start
-    vim /tmp/build/80754af9/npm-debug.log 
