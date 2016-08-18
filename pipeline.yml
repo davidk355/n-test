@@ -1,0 +1,57 @@
+resources:
+  - name: source-code
+    type: git
+    source:
+      uri: https://github.com/davidk355/sm-test.git
+      branch: master
+
+  - name: resource-deploy-web-app
+    type: cf
+    source:
+      api: {{cf-local-api}}
+      username: {{cf-local-username}}
+      password: {{cf-local-password}}
+      organization: {{cf-local-organization}}
+      space: {{cf-local-space}}
+      skip_cert_check: true
+
+  - name: resource-deploy-web-app-pws
+    type: cf
+    source:
+      api: {{cf-pws-api}}
+      username: {{cf-pws-username}}
+      password: {{cf-pws-password}}
+      organization: {{cf-pws-organization}}
+      space: {{cf-pws-space}}
+      skip_cert_check: true
+
+  - name: resource-deploy-web-app-pez
+    type: cf
+    source:
+      api: {{cf-pez-api}}
+      username: {{cf-pez-username}}
+      password: {{cf-pez-password}}
+      organization: {{cf-pez-organization}}
+      space: {{cf-pez-space}}
+      skip_cert_check: true
+
+jobs:
+  - name: job-deploy-app
+    serial: true
+    plan:
+    - {get: source-code, trigger: true}
+    - task: package
+      privileged: true
+      file: source-code/ci/tasks/package.yml
+    - put: resource-deploy-web-app
+      params:
+        manifest: source-code/manifest.yml
+        path: source-code-built/spring-music.jar
+    - put: resource-deploy-web-app-pws
+      params:
+        manifest: source-code/manifest.yml
+        path: source-code-built/spring-music.jar
+#    - put: resource-deploy-web-app-pez
+#      params:
+#        manifest: source-code/manifest.yml
+#        path: source-code-built/spring-music.jar
