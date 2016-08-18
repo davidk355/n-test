@@ -23,6 +23,7 @@ jobs:
     - task: build
       privileged: true
       file: source-code/ci/tasks/build.yml
+      path: source-code/mainfest.yml
     - put: resource-deploy-web-app
       params:
         manifest: source-code/manifest.yml
