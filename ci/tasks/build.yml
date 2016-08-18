@@ -20,4 +20,4 @@ run:
     ls source-code
     cp -r source-code/* source-code-built/
     ls source-code-built
-    ls /usr/local/bin 
+    /usr/local/bin/npm start 
