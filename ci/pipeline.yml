@@ -2,7 +2,7 @@ resources:
   - name: source-code
     type: git
     source:
-      uri: https://github.com/davidk355/n-test
+      uri: https://github.com/davidk355/n-test.git
       branch: master
 
   - name: resource-deploy-web-app
@@ -20,6 +20,9 @@ jobs:
     serial: true
     plan:
     - {get: source-code, trigger: true}
+    - task: build
+      privileged: true
+      file: source-code/ci/tasks/build.yml
     - put: resource-deploy-web-app
       params:
         manifest: source-code/manifest.yml
