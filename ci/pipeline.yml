@@ -26,3 +26,10 @@ jobs:
     - put: resource-deploy-web-app
       params:
         manifest: source-code/manifest.yml
+
+run:
+    path: sh
+    args:
+    - -exc
+    - |
+    cf logs cf-nodejs --recent
