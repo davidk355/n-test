@@ -15,7 +15,7 @@ resources:
       space: {{cf-local-space}}
       skip_cert_check: true
 
-- name: resource-deploy-web-app-pws
+  - name: resource-deploy-web-app-pws
     type: cf
     source:
       api: {{cf-pws-api}}
